@@ -1,7 +1,7 @@
 {
   "name": "playstation-test",
   "private": true,
-  "homepage": "https://github.com/EliHood/small-play-app",
+  "homepage": "https://elihood.github.io/small-play-app",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
