@@ -1,7 +1,7 @@
 {
   "name": "playstation-test",
   "private": true,
-  "homepage": "https://elihood.github.io/playstation-app",
+  "homepage": "https://elihood.github.io/playstation-app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
