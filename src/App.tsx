@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Button, AppText, ImageCards } from "./components";
 
-const isProduction = import.meta.env.PROD;
+const isProduction = import.meta.env?.PROD;
 
 function App() {
   const [activeIndex, setActiveIndex] = useState<number>(0);

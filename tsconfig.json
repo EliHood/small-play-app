@@ -6,8 +6,7 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-
-    "moduleResolution": "Node",
-    "types": ["jest", "@testing-library/jest-dom"]
+    // "moduleResolution": "Node",
+    "types": ["jest", "@testing-library/jest-dom", "vite/client"]
   }
 }

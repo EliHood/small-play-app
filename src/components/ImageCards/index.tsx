@@ -22,11 +22,19 @@ export function ImageCards({
               data-testid={`image-thumbnail-${key}`}
               aria-label="image-thumbail-conainer"
               onClick={() => setActiveIndex(key)}
+              onKeyDown={(e) => {
+                if (e.key === "ArrowLeft") {
+                  setActiveIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+                } else if (e.key === "ArrowRight") {
+                  setActiveIndex((prevIndex) => Math.min(prevIndex + 1, 5));
+                }
+              }}
               className={`p-4 cursor-pointer  w-full md:w-[160px] lg:w-full xl:w-[280px] h-auto relative ${
                 activeIndex === key
                   ? "active-gradient-border lg:max-w-[260px]"
                   : "opacity-70 lg:max-w-[160px] "
               }`}
+              tabIndex={0}
             >
               <img
                 src={item.img}

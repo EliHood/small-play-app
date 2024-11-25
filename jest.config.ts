@@ -1,9 +1,27 @@
 export default {
-  preset: "ts-jest",
+  preset: "ts-jest/presets/default-esm",
   testEnvironment: "jsdom",
   collectCoverageFrom: ["src/**/*.{ts,tsx"],
   transform: {
-    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        diagnostics: {
+          ignoreCodes: [1343],
+        },
+        astTransformers: {
+          before: [
+            {
+              path: "node_modules/ts-jest-mock-import-meta",
+              options: {
+                metaObjectReplacement: { url: "https://www.url.com" },
+              },
+            },
+          ],
+        },
+      },
+    ],
+
     "^.+\\.(js|jsx)?$": "babel-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js"],
