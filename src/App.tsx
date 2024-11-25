@@ -2,6 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { Button, AppText, ImageCards } from "./components";
 
+console.log("process", import.meta.env);
+
+const isProduction = import.meta.env.PROD;
+
 function App() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -27,7 +31,8 @@ function App() {
   bgMap.set(5, "5-background");
   bgMap.set(6, "6-background");
 
-  const getImage = (src: string) => `small-play-app/assets/${src}.png`;
+  const getImage = (src: string) =>
+    `${isProduction ? "assets" : "small-play-app/assets"}/${src}.png`;
 
   const renderImages = (imageType: "thumbnail" | "background") => {
     let imageMap: Map<number, string> = bgMap;
