@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { Button, AppText, ImageCards } from "./components";
 
-console.log("process", import.meta.env);
-
 const isProduction = import.meta.env.PROD;
 
 function App() {
